@@ -1,0 +1,14 @@
+﻿<Window x:Class="EyeBlinkReminder.Blinker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EyeBlinkReminder"
+        mc:Ignorable="d"
+        Title="EyeRelievingWindow" Height="Auto" Width="Auto" ResizeMode="NoResize" WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent" WindowStartupLocation="Manual" Topmost="True" Opacity="0.5">
+    <Grid Background="Transparent">
+        <TextBlock x:Name="mainButton"  Width="Auto" Height="100" Text="Did you blink your eyes?" FontSize="50" HorizontalAlignment="Center" Foreground="AntiqueWhite"></TextBlock>
+    </Grid>
+</Window>
