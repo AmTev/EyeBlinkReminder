@@ -5,7 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EyeBlinkReminder"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Minimized">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized">
+    <Grid Margin="20">
+        <StackPanel Orientation="Vertical">
+            <TextBlock FontSize="30">Text To Display</TextBlock>
+            <TextBox x:Name="textToDisplay" FontSize="30"></TextBox>
+            <TextBlock FontSize="30">Timer</TextBlock>
+            <TextBox x:Name="timer" FontSize="30"></TextBox>
+            <TextBlock FontSize="30"></TextBlock>
+            <Button x:Name="save" Content="Save" FontSize="30" Click="save_Click"></Button>
+        </StackPanel>
     </Grid>
 </Window>

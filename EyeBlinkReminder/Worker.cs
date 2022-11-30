@@ -9,7 +9,19 @@ namespace EyeBlinkReminder
 {
     public class EyeRelievingIntervalWorker
     {
-        public int Interval { get; set; } = 30 * 60;
+        public EyeRelievingIntervalWorker()
+        {
+            if (App.Current.Resources["timer"] != null)
+            {
+                var interval = Convert.ToInt32(App.Current.Resources["timer"].ToString());
+                if (interval > 0)
+                {
+                    this.Interval = interval * 60;
+                }
+            }
+        }
+
+        public int Interval { get; set; } = 30;
         public bool IsRunning { get; set; }
         private Task _task;
         public Task Task => _task;
@@ -24,7 +36,7 @@ namespace EyeBlinkReminder
                 {
                     var blinker = new Blinker();
                     blinker.WindowState = WindowState.Normal;
-
+                    blinker.mainButton.Text = App.Current.Resources["textToDisplay"] == null ? blinker.mainButton.Text : App.Current.Resources["textToDisplay"].ToString();
                     blinker.Show();
 
                     blinker.WindowState = WindowState.Maximized;

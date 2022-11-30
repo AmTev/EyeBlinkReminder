@@ -15,7 +15,9 @@ namespace EyeBlinkReminder
     public partial class App : Application
     {
         private bool _isExit;
+
         // private NotifyIcon _notifyIcon;
+        public static EyeRelievingIntervalWorker worker;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -23,7 +25,7 @@ namespace EyeBlinkReminder
 
             Task.Factory.StartNew(async () =>
             {
-                var worker = new EyeRelievingIntervalWorker();
+                worker = new EyeRelievingIntervalWorker();
                 while (true)
                 {
                     if (!worker.IsRunning)

@@ -25,6 +25,13 @@ namespace EyeBlinkReminder
         public Blinker()
         {
             InitializeComponent();
+            if (Resources["textToDisplay"] != null)
+            {
+                var textToDisplay = Resources["textToDisplay"].ToString();
+
+                mainButton.Text = String.IsNullOrWhiteSpace(textToDisplay) ? mainButton.Text : textToDisplay;
+            }
+
             DispatcherTimer timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(1) };
             timer.Tick += Timer_Tick;
             timer.Start();
